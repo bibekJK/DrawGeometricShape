@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -22,13 +23,11 @@
 				<div>
 					<label for="shape">Shape:</label> <select name="shape"
 						onChange="showDiv(this)">
-						<option value="triangle" id="triangle">Triangle</option>
-						<option value="diamond" id="diamond">Diamond</option>
-						<option value="square" id="square">Square</option>
-						<option value="rectangle" id="rectangle">Rectangle</option>
+						<c:forEach items="${lstOfShapes}" var="shape">
+							<option value="${shape}">${shape}</option>
+						</c:forEach>
 					</select>
 				</div>
-
 				<div>
 					<label for="height">Height:</label> <input type="text"
 						name="height" id="height" />
@@ -48,7 +47,6 @@
 					<label for="text">Text:</label> <input type="text" name="text"
 						id="text" />
 				</div>
-
 				<div>
 					<input type="submit" value="DRAW" />
 				</div>
@@ -59,7 +57,7 @@
 
 	<script>
 		function showDiv(elem) {
-			if (elem.value == "rectangle") {
+			if (elem.value == "Rectangle") {
 				document.getElementById('lengthDiv').style.display = "block";
 			} else {
 				document.getElementById('lengthDiv').style.display = "none";
