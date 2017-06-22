@@ -2,6 +2,8 @@ package com.draw.geometricshape.strategy;
 
 import org.springframework.stereotype.Component;
 
+import com.draw.geometricshape.domain.UserInputs;
+
 @Component
 public class StrategyContext {
 	private Idraw draw;
@@ -11,8 +13,8 @@ public class StrategyContext {
 		return this;
 	}
 
-	public void draw() {
-		draw.draw();
+	public void draw(UserInputs userInputs) {
+		draw.draw(userInputs);
 	}
 
 }
