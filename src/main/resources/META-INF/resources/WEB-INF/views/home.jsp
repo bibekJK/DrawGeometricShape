@@ -19,50 +19,62 @@
 <body>
 	<h1>Demo Project</h1>
 	<hr></hr>
-	<div class="content">
-		<div class="myForm">
+
+	<div class = "container">
+		<div class = "row">
+
+		<div class="col-md-6" >
 			<form:form method="POST" modelAttribute="userInputs">
-				<div>
-					<label for="shape">Shape:</label> <select name="shape"
-						onChange="showDiv(this)" path="shape">
+				<div class="form-group">
+					<label for="shape" class="col-md-6">Shape:</label> <select
+						name="shape" onChange="showDiv(this)" path="shape"
+						class="form-control"  style="width:auto;" >
 						<c:forEach items="${lstOfShapes}" var="shape">
 							<option value="${shape}">${shape}</option>
 						</c:forEach>
 					</select>
 				</div>
-				<div>
-					<label for="height">Height:</label> <input type="text"
-						name="height" id="height" path="height" value=""/>
+				<div class="form-group">
+					<label for="height" class="col-md-6">Height:</label> <input
+						type="text" name="height" id="height" path="height" value="" />
 				</div>
 
-				<div class="lengthDiv" id="lengthDiv">
-					<label for="length">Length:</label> <input type="text"
-						name="breadth" id="length" path="breadth" value=""/>
+				<div class="lengthDiv form-group" id="lengthDiv">
+					<label for="length" class="col-md-6">Length:</label> <input
+						type="text" name="breadth" id="length" path="breadth" value="" />
 				</div>
 
-				<div>
-					<label for="row">Row:</label> <input type="text" name="row"
-						id="row" path="row" value=""/>
+				<div class="form-group">
+					<label for="row" class="col-md-6">Row:</label> <input
+						type="text" name="row" id="row" path="row" value="" />
 				</div>
 
-				<div>
-					<label for="text">Text:</label> <input type="text" name="text"
-						id="text" path="text" value="" />
+				<div class="form-group">
+					<label for="text" class="col-md-6">Text:</label> <input
+						type="text" name="text" id="text" path="text" value="" />
 				</div>
-				<div>
-					<input type="submit" value="DRAW" />
+				<div class="form-group">
+					<div class="col-md-6">
+						<input type="submit" value="DRAW" class = "btn btn-default"/>
+					</div>
 				</div>
 
 			</form:form>
 		</div>
+		
+		<div class ="col-md-6" >
+			<h2>Result</h2>
+			<div id="result">
+				<h1>${result}</h1>
+			</div>
+		</div>
 	</div>
+
 	
-	<div>
-	${result}
-	</div>
 
 	<script>
 		function showDiv(elem) {
+			document.getElementById('result').innerHTML = "";
 			if (elem.value == "Rectangle") {
 				document.getElementById('lengthDiv').style.display = "block";
 			} else {
