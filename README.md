@@ -1,1 +1,2 @@
-# DrawGeometricShape
+This web application let you choose different geometric shapes, display text in the row of user's choice. 
+The inputs are a height of the shape, text to display and row of the text display. For the rectangle, the user needs to input breadth as well. 
