@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,19 +27,24 @@ public class HomeController {
 	@Autowired
 	private StrategyContext strategyContext;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
 	public String getHomePage(Model model) {
 		addListToShowInJsp(model);
 		return "home";
 	}
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public String drawShape(@ModelAttribute("userInputs") UserInputs userInputs, Model model) {
+	public String drawShape(@Valid @ModelAttribute("userInputs") UserInputs userInputs, BindingResult results,
+			Model model) {
+		if (results.hasErrors()) {
+			addListToShowInJsp(model);
+			return "home";
+		}
 		if (userInputs.getShape().equalsIgnoreCase("Triangle")) {
 			String result = strategyContext.getStrategyContext(new Triangle()).draw(userInputs);
 			model.addAttribute("result", result);
 		} else if (userInputs.getShape().equalsIgnoreCase("Rectangle")) {
-			String result= strategyContext.getStrategyContext(new Rectangle()).draw(userInputs);
+			String result = strategyContext.getStrategyContext(new Rectangle()).draw(userInputs);
 			model.addAttribute("result", result);
 		} else if (userInputs.getShape().equalsIgnoreCase("Diamond")) {
 			String result = strategyContext.getStrategyContext(new Diamond()).draw(userInputs);
