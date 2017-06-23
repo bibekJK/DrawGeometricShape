@@ -33,16 +33,20 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public String drawShape(@ModelAttribute("userInputs") UserInputs userInputs, Model model) {
 		if (userInputs.getShape().equalsIgnoreCase("Triangle")) {
-			strategyContext.getStrategyContext(new Triangle()).draw(userInputs);
+			String result = strategyContext.getStrategyContext(new Triangle()).draw(userInputs);
+			model.addAttribute("result", result);
 		} else if (userInputs.getShape().equalsIgnoreCase("Rectangle")) {
-			strategyContext.getStrategyContext(new Rectangle()).draw(userInputs);
+			String result= strategyContext.getStrategyContext(new Rectangle()).draw(userInputs);
+			model.addAttribute("result", result);
 		} else if (userInputs.getShape().equalsIgnoreCase("Diamond")) {
-			strategyContext.getStrategyContext(new Diamond()).draw(userInputs);
+			String result = strategyContext.getStrategyContext(new Diamond()).draw(userInputs);
+			model.addAttribute("result", result);
 		} else if (userInputs.getShape().equalsIgnoreCase("Square")) {
 			String result = strategyContext.getStrategyContext(new Square()).draw(userInputs);
 			model.addAttribute("result", result);
 		} else {
-			System.out.println("I am out of the race");
+			String result = "Not a valid input";
+			model.addAttribute("result", result);
 		}
 		addListToShowInJsp(model);
 		return "home";
