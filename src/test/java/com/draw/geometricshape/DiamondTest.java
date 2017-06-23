@@ -46,12 +46,13 @@ public class DiamondTest {
 		userInputs.setHeight("10");
 		userInputs.setRow("5");
 		userInputs.setText("four");
-		assertEquals(206, diamond.draw(userInputs).length());
+		assertEquals(296, diamond.draw(userInputs).length());
 
 		userInputs.setHeight("4");
 		userInputs.setRow("3");
 		userInputs.setText("tw");
-		assertEquals("&nbsp;* <br>* * <br>&nbsp;* t w <br>", diamond.draw(userInputs));
+		assertEquals("&nbsp;&nbsp;* <br>&nbsp;* * <br>* t w <br>&nbsp;* * <br>&nbsp;&nbsp;* <br>",
+				diamond.draw(userInputs));
 
 	}
 
