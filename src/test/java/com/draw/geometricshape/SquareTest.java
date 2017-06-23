@@ -7,17 +7,16 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.draw.geometricshape.domain.UserInputs;
-import com.draw.geometricshape.strategy.Diamond;
+import com.draw.geometricshape.strategy.Square;
 
-public class DiamondTest {
-	Diamond diamond;
+public class SquareTest {
+	Square square;
 	UserInputs userInputs;
 
 	@Before
 	public void setUp() {
-		diamond = new Diamond();
+		square = new Square();
 		userInputs = new UserInputs();
-
 	}
 
 	@Test
@@ -25,7 +24,7 @@ public class DiamondTest {
 		userInputs.setHeight("10");
 		userInputs.setRow("5");
 		userInputs.setText("s");
-		assertNotNull(diamond.draw(userInputs));
+		assertNotNull(square.draw(userInputs));
 	}
 
 	@Test
@@ -33,12 +32,12 @@ public class DiamondTest {
 		userInputs.setHeight("10");
 		userInputs.setRow("11");
 		userInputs.setText("s");
-		assertEquals("Not a valid input", diamond.draw(userInputs));
+		assertEquals("Not a valid input", square.draw(userInputs));
 
 		userInputs.setHeight("10");
 		userInputs.setRow("1");
-		userInputs.setText("test");
-		assertEquals("Not a valid input", diamond.draw(userInputs));
+		userInputs.setText("testmorethanten");
+		assertEquals("Not a valid input", square.draw(userInputs));
 	}
 
 	@Test
@@ -46,12 +45,14 @@ public class DiamondTest {
 		userInputs.setHeight("10");
 		userInputs.setRow("5");
 		userInputs.setText("four");
-		assertEquals(206, diamond.draw(userInputs).length());
+
+		assertEquals(140, square.draw(userInputs).length());
 
 		userInputs.setHeight("4");
 		userInputs.setRow("3");
 		userInputs.setText("tw");
-		assertEquals("&nbsp;* <br>* * <br>&nbsp;* t w <br>", diamond.draw(userInputs));
+
+		assertEquals("****<br>****<br>****<br>*tw*<br>", square.draw(userInputs));
 
 	}
 

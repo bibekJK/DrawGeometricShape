@@ -22,7 +22,7 @@ public class Diamond implements Idraw {
 		int row = Integer.parseInt(userInputs.getRow());
 		String text = userInputs.getText();
 
-		int input = height / 2;
+		int input = height / 2+1;
 
 		int spac = input - 1;
 		int min = 1;
@@ -52,7 +52,7 @@ public class Diamond implements Idraw {
 			result.append("<br>");
 			count++;
 		}
-		for (int m = input - 1; m > 0; m--) {
+		for (int m = input-1; m > 0; m--) {
 			for (int n = spac; n >= m; n--) {
 				result.append("&nbsp;");
 			}
