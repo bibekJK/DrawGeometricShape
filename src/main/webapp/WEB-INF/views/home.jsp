@@ -42,7 +42,7 @@
 					</div>
 					<div class="form-group">
 						<label for="height" class="col-md-6">Height:</label> <input
-							type="text" name="height" id="height" path="height" value="" />
+							type="number" name="height" id="height" path="height" value="" />
 							<div id ="errorHeight">
 						<form:errors path="height" cssStyle="color:red" />
 						</div>
@@ -50,12 +50,12 @@
 
 					<div class="lengthDiv form-group" id="lengthDiv">
 						<label for="length" class="col-md-6">Breadth:</label> <input
-							type="text" name="breadth" id="length" path="breadth" value="" />
+							type="number" name="breadth" id="length" path="breadth" value="" />
 						<%-- <form:errors path="breadth" cssStyle="color:red" class="error"/> --%>
 					</div>
 
 					<div class="form-group">
-						<label for="row" class="col-md-6">Row:</label> <input type="text"
+						<label for="row" class="col-md-6">Row:</label> <input type="number"
 							name="row" id="row" path="row" value="" />
 							<div id ="errorRow"><form:errors path="row" cssStyle="color:red"  /></div>
 						
