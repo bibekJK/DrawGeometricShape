@@ -2,6 +2,13 @@ package com.draw.geometricshape.strategy;
 
 import com.draw.geometricshape.domain.UserInputs;
 
+/**
+ * Tis class contains draw and validate methods to draw the Triangle shape as per
+ * the requirement and validate input parameters
+ * 
+ * @author Bibek
+ *
+ */
 public class Triangle implements Idraw {
 
 	@Override

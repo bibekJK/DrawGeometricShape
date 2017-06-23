@@ -22,6 +22,11 @@ import com.draw.geometricshape.strategy.Square;
 import com.draw.geometricshape.strategy.StrategyContext;
 import com.draw.geometricshape.strategy.Triangle;
 
+/**
+ * @author Bibek This class contains controller methods to serve the requests
+ *         coming from view page
+ */
+
 @Controller
 public class HomeController {
 	@Autowired
@@ -33,6 +38,13 @@ public class HomeController {
 		return "home";
 	}
 
+	/**
+	 * 
+	 * @param userInputs
+	 * @param results
+	 * @param model
+	 * @return result string for display
+	 */
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public String drawShape(@Valid @ModelAttribute("userInputs") UserInputs userInputs, BindingResult results,
 			Model model) {

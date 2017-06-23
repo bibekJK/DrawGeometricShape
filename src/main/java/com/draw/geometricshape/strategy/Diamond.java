@@ -2,8 +2,16 @@ package com.draw.geometricshape.strategy;
 
 import com.draw.geometricshape.domain.UserInputs;
 
+/**
+ * @author Bibek this class contains draw and validate methods to draw the
+ *         diamond shape as per the requirement and validate input parameters
+ *
+ */
 public class Diamond implements Idraw {
 
+	/**
+	 * This method draws diamond shape with the given text and row
+	 */
 	@Override
 	public String draw(UserInputs userInputs) {
 		StringBuilder result = new StringBuilder();
@@ -73,6 +81,13 @@ public class Diamond implements Idraw {
 
 	}
 
+	/**
+	 * 
+	 * @param height
+	 * @param row
+	 * @param text
+	 * @return true or false validating given inputs from user
+	 */
 	public static boolean validate(int height, int row, String text) {
 
 		int len = text.length();

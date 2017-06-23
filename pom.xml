@@ -6,7 +6,6 @@
 	<groupId>com.draw.geometricshape</groupId>
 	<artifactId>geometricshape</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
 
 	<name>DrawGeometricShape</name>
 	<description>Demo project for Geometric Shape</description>
@@ -58,25 +57,33 @@
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
-			<version>1.0.0.GA</version>
-		</dependency>
+			</dependency>
 
+		
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>4.3.1.Final</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-tomcat</artifactId>
+		<scope>provided</scope>
 		</dependency>
 
 	</dependencies>
 
 	<build>
 		<plugins>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<webappDirectory>C:/Users/Owner/HackerRank/DrawGeometricShape/target</webappDirectory>
+				</configuration>
+			</plugin> -->
 		</plugins>
 	</build>
 
 
+	<packaging>war</packaging>
 </project>
