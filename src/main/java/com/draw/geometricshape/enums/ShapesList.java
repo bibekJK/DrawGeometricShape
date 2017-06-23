@@ -1,7 +1,9 @@
 package com.draw.geometricshape.enums;
 
 /**
- * @author Bibek This enum contains shapes that can be drawn
+ * This enum contains shapes that can be drawn
+ * 
+ * @author Bibek 
  *
  */
 public enum ShapesList {

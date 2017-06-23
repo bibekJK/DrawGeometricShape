@@ -23,8 +23,10 @@ import com.draw.geometricshape.strategy.StrategyContext;
 import com.draw.geometricshape.strategy.Triangle;
 
 /**
- * @author Bibek This class contains controller methods to serve the requests
- *         coming from view page
+ * This class contains controller methods to serve the requests coming from view
+ * page
+ * 
+ * @author Bibek
  */
 
 @Controller

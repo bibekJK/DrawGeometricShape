@@ -4,8 +4,10 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
 /**
- * @author Bibek This class contains getters and setters method for user inputs
- *         value from front view page
+ * This class contains getters and setters method for user inputs value from
+ * front view page
+ * 
+ * @author Bibek
  *
  */
 @Component

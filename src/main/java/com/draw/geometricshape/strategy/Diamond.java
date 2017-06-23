@@ -3,8 +3,10 @@ package com.draw.geometricshape.strategy;
 import com.draw.geometricshape.domain.UserInputs;
 
 /**
- * @author Bibek this class contains draw and validate methods to draw the
- *         diamond shape as per the requirement and validate input parameters
+ * This class contains draw and validate methods to draw the diamond shape as
+ * per the requirement and validate input parameters
+ * 
+ * @author Bibek
  *
  */
 public class Diamond implements Idraw {

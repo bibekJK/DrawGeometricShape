@@ -3,7 +3,9 @@ package com.draw.geometricshape.strategy;
 import com.draw.geometricshape.domain.UserInputs;
 
 /**
- * @author Bibek this interface contains method signature to draw
+ * This interface contains method signature to draw
+ * 
+ * @author Bibek
  *
  */
 public interface Idraw {
