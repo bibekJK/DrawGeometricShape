@@ -1,16 +1,13 @@
 package com.draw.geometricshape.strategy;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.draw.geometricshape.domain.UserInputs;
 
 public class Square implements Idraw {
 
 	@Override
 	public String draw(UserInputs userInputs) {
-		StringBuilder result=new StringBuilder();
-		
+		StringBuilder result = new StringBuilder();
+
 		int height = Integer.parseInt(userInputs.getHeight());
 		int row = Integer.parseInt(userInputs.getRow());
 		String text = userInputs.getText();
@@ -20,24 +17,38 @@ public class Square implements Idraw {
 				for (int k = 0; k < height; k++) {
 
 					if (k == temp / 2) {
-						//System.out.print(text);
+
 						result.append(text);
 						k += text.length() - 1;
 					} else {
-						//System.out.print("*");
+
 						result.append("*");
 					}
 				}
 			} else {
 				for (int j = 0; j < height; j++) {
-					//System.out.print("*");
+
 					result.append("*");
 				}
 			}
-			//System.out.println();
+
 			result.append("<br>");
 		}
-		return result.toString();
+
+		if (validate(height, row, text) == true) {
+			return result.toString();
+		} else {
+			return "Not a valid input";
+		}
+	}
+
+	public static boolean validate(int height, int row, String text) {
+		int len = text.length();
+		if (row > height) {
+			return false;
+		}
+		return (len >= 0 && len < height);
+
 	}
 
 }
