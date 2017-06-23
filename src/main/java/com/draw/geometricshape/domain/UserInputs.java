@@ -1,11 +1,15 @@
 package com.draw.geometricshape.domain;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
 @Component
 public class UserInputs {
+	@NotEmpty(message="Height should not be empty")
 	private String height;
+	//@NotEmpty(message="Breadth should not be empty")
 	private String breadth;
+	@NotEmpty(message="Row should not be empty")
 	private String row;
 	private String text;
 	private String shape;
@@ -14,23 +18,17 @@ public class UserInputs {
 	};
 
 	// For Rectangle
-	/*public UserInputs(int height, int breadth, int row, String text, String shape) {
-		super();
-		this.height = height;
-		this.breadth = breadth;
-		this.row = row;
-		this.text = text;
-		this.shape = shape;
-	}
-*/
+	/*
+	 * public UserInputs(int height, int breadth, int row, String text, String
+	 * shape) { super(); this.height = height; this.breadth = breadth; this.row
+	 * = row; this.text = text; this.shape = shape; }
+	 */
 	// Rest others
-	/*public UserInputs(int height, int row, String text, String shape) {
-		super();
-		this.height = height;
-		this.row = row;
-		this.text = text;
-		this.shape = shape;
-	}*/
+	/*
+	 * public UserInputs(int height, int row, String text, String shape) {
+	 * super(); this.height = height; this.row = row; this.text = text;
+	 * this.shape = shape; }
+	 */
 
 	public String getHeight() {
 		return height;
