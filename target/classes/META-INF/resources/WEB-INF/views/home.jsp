@@ -56,6 +56,10 @@
 			</form:form>
 		</div>
 	</div>
+	
+	<div>
+	${result}
+	</div>
 
 	<script>
 		function showDiv(elem) {

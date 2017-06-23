@@ -39,7 +39,8 @@ public class HomeController {
 		} else if (userInputs.getShape().equalsIgnoreCase("Diamond")) {
 			strategyContext.getStrategyContext(new Diamond()).draw(userInputs);
 		} else if (userInputs.getShape().equalsIgnoreCase("Square")) {
-			strategyContext.getStrategyContext(new Square()).draw(userInputs);
+			String result = strategyContext.getStrategyContext(new Square()).draw(userInputs);
+			model.addAttribute("result", result);
 		} else {
 			System.out.println("I am out of the race");
 		}

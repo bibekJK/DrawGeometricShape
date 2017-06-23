@@ -13,8 +13,8 @@ public class StrategyContext {
 		return this;
 	}
 
-	public void draw(UserInputs userInputs) {
-		draw.draw(userInputs);
+	public String draw(UserInputs userInputs) {
+		return draw.draw(userInputs);
 	}
 
 }
