@@ -6,8 +6,8 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.draw.geometricshape.domain.UserInputs;
-import com.draw.geometricshape.strategy.Square;
+import com.draw.geometricshape.domain.interfaces.UserInputs;
+import com.draw.geometricshape.domain.shapes.Square;
 
 public class SquareTest {
 	Square square;

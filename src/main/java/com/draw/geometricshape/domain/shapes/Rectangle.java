@@ -1,6 +1,6 @@
-package com.draw.geometricshape.strategy;
+package com.draw.geometricshape.domain.shapes;
 
-import com.draw.geometricshape.domain.UserInputs;
+import com.draw.geometricshape.domain.interfaces.UserInputs;
 
 /**
  * This class contains draw and validate methods to draw the Rectangle shape as
@@ -9,7 +9,7 @@ import com.draw.geometricshape.domain.UserInputs;
  * @author Bibek
  *
  */
-public class Rectangle implements Idraw {
+public class Rectangle implements IGeometricShape {
 
 	@Override
 	public String draw(UserInputs userInputs) {
@@ -57,13 +57,8 @@ public class Rectangle implements Idraw {
 	 * @param text
 	 * @return true or false validating given inputs from user
 	 */
-	public static boolean validate(int height, int breadth, int row, String text) {
+	private boolean validate(int height, int breadth, int row, String text) {
 		int len = text.length();
-		if (len > breadth || breadth < 0 || height < 0 || row > height) {
-			return false;
-		} else {
-			return true;
-
-		}
+		return !(len > breadth || breadth < 0 || height < 0 || row > height);
 	}
 }

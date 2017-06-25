@@ -1,15 +1,15 @@
-package com.draw.geometricshape.strategy;
+package com.draw.geometricshape.domain.shapes;
 
-import com.draw.geometricshape.domain.UserInputs;
+import com.draw.geometricshape.domain.interfaces.UserInputs;
 
 /**
- * This class contains draw and validate methods to draw the Triangle shape as per
- * the requirement and validate input parameters
+ * This class contains draw and validate methods to draw the Triangle shape as
+ * per the requirement and validate input parameters
  * 
  * @author Bibek
  *
  */
-public class Triangle implements Idraw {
+public class Triangle implements IGeometricShape {
 
 	@Override
 	public String draw(UserInputs userInputs) {
@@ -55,17 +55,13 @@ public class Triangle implements Idraw {
 		}
 	}
 
-	public static boolean validate(int height, int row, String text) {
+	private boolean validate(int height, int row, String text) {
 		int len = text.length();
 		if (len < 0 || row > height) {
 			return false;
 		}
 
-		if (text.length() >= 0 && text.length() <= row) {
-			return true;
-		} else {
-			return false;
-		}
+		return text.length() >= 0 && text.length() <= row;
 
 	}
 

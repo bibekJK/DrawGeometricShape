@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.draw.geometricshape.domain.UserInputs;
-import com.draw.geometricshape.enums.ShapesList;
-import com.draw.geometricshape.strategy.Diamond;
-import com.draw.geometricshape.strategy.Rectangle;
-import com.draw.geometricshape.strategy.Square;
-import com.draw.geometricshape.strategy.StrategyContext;
-import com.draw.geometricshape.strategy.Triangle;
+import com.draw.geometricshape.domain.interfaces.UserInputs;
+import com.draw.geometricshape.domain.shapes.Diamond;
+import com.draw.geometricshape.domain.shapes.Rectangle;
+import com.draw.geometricshape.domain.shapes.Square;
+import com.draw.geometricshape.domain.shapes.Triangle;
+import com.draw.geometricshape.enums.ShapeType;
+import com.draw.geometricshape.services.GeometricShapeService;
 
 /**
  * This class contains controller methods to serve the requests coming from view
@@ -32,11 +32,11 @@ import com.draw.geometricshape.strategy.Triangle;
 @Controller
 public class HomeController {
 	@Autowired
-	private StrategyContext strategyContext;
+	private GeometricShapeService strategyContext;
 
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
 	public String getHomePage(Model model) {
-		addListToShowInJsp(model);
+		addShapeList(model);
 		return "home";
 	}
 
@@ -51,31 +51,39 @@ public class HomeController {
 	public String drawShape(@Valid @ModelAttribute("userInputs") UserInputs userInputs, BindingResult results,
 			Model model) {
 		if (results.hasErrors()) {
-			addListToShowInJsp(model);
+			addShapeList(model);
 			return "home";
 		}
+
+		String result = null;
 		if (userInputs.getShape().equalsIgnoreCase("Triangle")) {
-			String result = strategyContext.getStrategyContext(new Triangle()).draw(userInputs);
-			model.addAttribute("result", result);
+			strategyContext.setShape(new Triangle());// .draw(userInputs);
+			// model.addAttribute("result", result);
 		} else if (userInputs.getShape().equalsIgnoreCase("Rectangle")) {
-			String result = strategyContext.getStrategyContext(new Rectangle()).draw(userInputs);
-			model.addAttribute("result", result);
+			strategyContext.setShape(new Rectangle());
+			// model.addAttribute("result", result);
 		} else if (userInputs.getShape().equalsIgnoreCase("Diamond")) {
-			String result = strategyContext.getStrategyContext(new Diamond()).draw(userInputs);
-			model.addAttribute("result", result);
+			strategyContext.setShape(new Diamond());
+			// model.addAttribute("result", result);
 		} else if (userInputs.getShape().equalsIgnoreCase("Square")) {
-			String result = strategyContext.getStrategyContext(new Square()).draw(userInputs);
-			model.addAttribute("result", result);
+			strategyContext.setShape(new Square());
+			// model.addAttribute("result", result);
 		} else {
-			String result = "Not a valid input";
-			model.addAttribute("result", result);
+			result = "Not a valid input";
+			// model.addAttribute("result", result);
 		}
-		addListToShowInJsp(model);
+
+		if (result == null) {
+			result = strategyContext.draw(userInputs);
+		}
+		model.addAttribute("result", result);
+
+		addShapeList(model);
 		return "home";
 	}
 
-	private void addListToShowInJsp(Model model) {
-		List<ShapesList> shapes = new ArrayList<>(Arrays.asList(ShapesList.values()));
+	private void addShapeList(Model model) {
+		List<ShapeType> shapes = new ArrayList<>(Arrays.asList(ShapeType.values()));
 		model.addAttribute("lstOfShapes", shapes);
 	}
 

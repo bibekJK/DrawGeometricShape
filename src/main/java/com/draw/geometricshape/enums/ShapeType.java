@@ -6,7 +6,7 @@ package com.draw.geometricshape.enums;
  * @author Bibek 
  *
  */
-public enum ShapesList {
-	Triangle, Diamond, Square, Rectangle
+public enum ShapeType {
+	TRIANGLE, DIAMOND, SQUARE, RECTANGLE
 
 }

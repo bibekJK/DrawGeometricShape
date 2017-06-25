@@ -1,4 +1,4 @@
-package com.draw.geometricshape.domain;
+package com.draw.geometricshape.domain.interfaces;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @author Bibek
  *
  */
-@Component
+
 public class UserInputs {
 	@NotEmpty(message = "Height should not be empty")
 	private String height;

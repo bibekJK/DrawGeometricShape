@@ -13,7 +13,6 @@ import org.springframework.context.annotation.ComponentScan;
  *
  */
 @SpringBootApplication
-@ComponentScan("com.draw.geometricshape.*")
 public class DrawGeometricShapeApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {

@@ -1,6 +1,6 @@
-package com.draw.geometricshape.strategy;
+package com.draw.geometricshape.domain.shapes;
 
-import com.draw.geometricshape.domain.UserInputs;
+import com.draw.geometricshape.domain.interfaces.UserInputs;
 
 /**
  * This class contains draw and validate methods to draw the diamond shape as
@@ -9,7 +9,7 @@ import com.draw.geometricshape.domain.UserInputs;
  * @author Bibek
  *
  */
-public class Diamond implements Idraw {
+public class Diamond implements IGeometricShape {
 
 	/**
 	 * This method draws diamond shape with the given text and row
@@ -22,7 +22,7 @@ public class Diamond implements Idraw {
 		int row = Integer.parseInt(userInputs.getRow());
 		String text = userInputs.getText();
 
-		int input = height / 2+1;
+		int input = height / 2 + 1;
 
 		int spac = input - 1;
 		int min = 1;
@@ -52,7 +52,7 @@ public class Diamond implements Idraw {
 			result.append("<br>");
 			count++;
 		}
-		for (int m = input-1; m > 0; m--) {
+		for (int m = input - 1; m > 0; m--) {
 			for (int n = spac; n >= m; n--) {
 				result.append("&nbsp;");
 			}
@@ -90,7 +90,7 @@ public class Diamond implements Idraw {
 	 * @param text
 	 * @return true or false validating given inputs from user
 	 */
-	public static boolean validate(int height, int row, String text) {
+	private boolean validate(int height, int row, String text) {
 
 		int len = text.length();
 		if (len < 0 || row > height) {

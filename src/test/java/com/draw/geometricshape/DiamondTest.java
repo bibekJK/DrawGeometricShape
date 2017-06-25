@@ -6,8 +6,8 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.draw.geometricshape.domain.UserInputs;
-import com.draw.geometricshape.strategy.Diamond;
+import com.draw.geometricshape.domain.interfaces.UserInputs;
+import com.draw.geometricshape.domain.shapes.Diamond;
 
 public class DiamondTest {
 	Diamond diamond;
