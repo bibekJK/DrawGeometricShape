@@ -76,7 +76,9 @@
 			<div class="col-md-6">
 				<h2>Result</h2>
 				<div id="result">
-					<h1>${result}</h1>
+				<h1>
+					<tt>${result}</tt>
+					</h1>
 				</div>
 			</div>
 		</div>
@@ -86,7 +88,7 @@
 				document.getElementById('errorRow').innerHTML = "";
 				document.getElementById('errorHeight').innerHTML = "";
 				
-				if (elem.value == "Rectangle") {
+				if (elem.value == "RECTANGLE") {
 					document.getElementById('lengthDiv').style.display = "block";
 				} else {
 					document.getElementById('lengthDiv').style.display = "none";

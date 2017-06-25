@@ -56,21 +56,23 @@ public class HomeController {
 		}
 
 		String result = null;
-		if (userInputs.getShape().equalsIgnoreCase("Triangle")) {
-			strategyContext.setShape(new Triangle());// .draw(userInputs);
-			// model.addAttribute("result", result);
-		} else if (userInputs.getShape().equalsIgnoreCase("Rectangle")) {
+
+		switch (userInputs.getShape()) {
+		case "TRIANGLE":
+			strategyContext.setShape(new Triangle());
+			break;
+		case "RECTANGLE":
 			strategyContext.setShape(new Rectangle());
-			// model.addAttribute("result", result);
-		} else if (userInputs.getShape().equalsIgnoreCase("Diamond")) {
+			break;
+		case "DIAMOND":
 			strategyContext.setShape(new Diamond());
-			// model.addAttribute("result", result);
-		} else if (userInputs.getShape().equalsIgnoreCase("Square")) {
+			break;
+		case "SQUARE":
 			strategyContext.setShape(new Square());
-			// model.addAttribute("result", result);
-		} else {
+			break;
+		default:
 			result = "Not a valid input";
-			// model.addAttribute("result", result);
+
 		}
 
 		if (result == null) {
