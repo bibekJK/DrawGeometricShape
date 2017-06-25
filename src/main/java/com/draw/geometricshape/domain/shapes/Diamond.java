@@ -22,64 +22,62 @@ public class Diamond implements IGeometricShape {
 		int row = Integer.parseInt(userInputs.getRow());
 		String text = userInputs.getText();
 
-		int input = height / 2 + 1;
-
-		int spac = input - 1;
-		int min = 1;
-		int count = 1;
-		for (int i = 0; i < input; i++) {
-			for (int k = spac; k > i; k--) {
-				result.append("&nbsp;");
-			}
-
-			if (row == count) {
-				result.append("* ");
-				for (int j = 0; j < text.length(); j++) {
-					String temp = text.charAt(j) + " ";
-					result.append(temp);
-				}
-				for (int j = text.length(); j < i; j++) {
-					result.append("* ");
-
-				}
-			} else {
-				for (int j = 0; j < min; j++) {
-					result.append("* ");
-				}
-			}
-
-			min += 1;
-			result.append("<br>");
-			count++;
-		}
-		for (int m = input - 1; m > 0; m--) {
-			for (int n = spac; n >= m; n--) {
-				result.append("&nbsp;");
-			}
-			if (count == row) {
-				result.append("* ");
-				for (int q = 0; q < text.length(); q++) {
-					String temp = text.charAt(q) + " ";
-					result.append(temp);
-				}
-				for (int q = text.length(); q < m - 1; q++) {
-					result.append("* ");
-				}
-			} else {
-				for (int q = 0; q < m; q++) {
-					result.append("* ");
-				}
-			}
-
-			result.append("<br>");
-			count++;
-		}
-
 		if (validate(height, row, text) == true) {
-			return result.toString();
+			int input = height / 2 + 1;
+			int spac = input - 1;
+			int min = 1;
+			int count = 1;
+			for (int i = 0; i < input; i++) {
+				for (int k = spac; k > i; k--) {
+					result.append("&nbsp;");
+				}
+
+				if (row == count) {
+					result.append("* ");
+					for (int j = 0; j < text.length(); j++) {
+						String temp = text.charAt(j) + " ";
+						result.append(temp);
+					}
+					for (int j = text.length(); j < i; j++) {
+						result.append("* ");
+
+					}
+				} else {
+					for (int j = 0; j < min; j++) {
+						result.append("* ");
+					}
+				}
+
+				min += 1;
+				result.append("<br>");
+				count++;
+			}
+			for (int m = input - 1; m > 0; m--) {
+				for (int n = spac; n >= m; n--) {
+					result.append("&nbsp;");
+				}
+				if (count == row) {
+					result.append("* ");
+					for (int q = 0; q < text.length(); q++) {
+						String temp = text.charAt(q) + " ";
+						result.append(temp);
+					}
+					for (int q = text.length(); q < m - 1; q++) {
+						result.append("* ");
+					}
+				} else {
+					for (int q = 0; q < m; q++) {
+						result.append("* ");
+					}
+				}
+
+				result.append("<br>");
+				count++;
+			}
 		} else {
 			return "Not a valid input";
 		}
+		return result.toString();
 
 	}
 
