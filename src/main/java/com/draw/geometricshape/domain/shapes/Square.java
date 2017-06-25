@@ -1,6 +1,6 @@
 package com.draw.geometricshape.domain.shapes;
 
-import com.draw.geometricshape.domain.interfaces.UserInputs;
+import com.draw.geometricshape.domain.interfaces.UserInput;
 
 /**
  * This class contains draw and validate methods to draw the diamond shape as
@@ -15,7 +15,7 @@ public class Square implements IGeometricShape {
 	 * This method draws square shape with the given text and row
 	 */
 	@Override
-	public String draw(UserInputs userInputs) {
+	public String draw(UserInput userInputs) {
 		StringBuilder result = new StringBuilder();
 
 		int height = Integer.parseInt(userInputs.getHeight());
@@ -42,7 +42,6 @@ public class Square implements IGeometricShape {
 					}
 				} else {
 					for (int j = 0; j < height; j++) {
-
 						result.append("* ");
 					}
 				}

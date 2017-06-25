@@ -1,6 +1,6 @@
 package com.draw.geometricshape.domain.shapes;
 
-import com.draw.geometricshape.domain.interfaces.UserInputs;
+import com.draw.geometricshape.domain.interfaces.UserInput;
 
 /**
  * This class contains draw and validate methods to draw the Triangle shape as
@@ -12,7 +12,7 @@ import com.draw.geometricshape.domain.interfaces.UserInputs;
 public class Triangle implements IGeometricShape {
 
 	@Override
-	public String draw(UserInputs userInputs) {
+	public String draw(UserInput userInputs) {
 		StringBuilder result = new StringBuilder();
 
 		int height = Integer.parseInt(userInputs.getHeight());

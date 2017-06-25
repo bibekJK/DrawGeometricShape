@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  *
  */
 
-public class UserInputs {
+public class UserInput {
 	@NotEmpty(message = "Height should not be empty")
 	private String height;
 	// @NotEmpty(message="Breadth should not be empty")
@@ -21,7 +21,7 @@ public class UserInputs {
 	private String text;
 	private String shape;
 
-	public UserInputs() {
+	public UserInput() {
 	};
 
 	public String getHeight() {

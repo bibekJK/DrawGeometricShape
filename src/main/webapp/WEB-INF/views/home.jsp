@@ -43,8 +43,8 @@
 					<div class="form-group">
 						<label for="height" class="col-md-6">Height:</label> <input
 							type="number" name="height" id="height" path="height" value="" />
-							<div id ="errorHeight">
-						<form:errors path="height" cssStyle="color:red" />
+						<div id="errorHeight">
+							<form:errors path="height" cssStyle="color:red" />
 						</div>
 					</div>
 
@@ -55,10 +55,12 @@
 					</div>
 
 					<div class="form-group">
-						<label for="row" class="col-md-6">Row:</label> <input type="number"
-							name="row" id="row" path="row" value="" />
-							<div id ="errorRow"><form:errors path="row" cssStyle="color:red"  /></div>
-						
+						<label for="row" class="col-md-6">Row:</label> <input
+							type="number" name="row" id="row" path="row" value="" />
+						<div id="errorRow">
+							<form:errors path="row" cssStyle="color:red" />
+						</div>
+
 					</div>
 
 					<div class="form-group">
@@ -76,9 +78,7 @@
 			<div class="col-md-6">
 				<h2>Result</h2>
 				<div id="result">
-				<h1>
 					<tt>${result}</tt>
-					</h1>
 				</div>
 			</div>
 		</div>
@@ -87,7 +87,7 @@
 				document.getElementById('result').innerHTML = "";
 				document.getElementById('errorRow').innerHTML = "";
 				document.getElementById('errorHeight').innerHTML = "";
-				
+
 				if (elem.value == "RECTANGLE") {
 					document.getElementById('lengthDiv').style.display = "block";
 				} else {

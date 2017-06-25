@@ -1,6 +1,6 @@
 package com.draw.geometricshape.domain.shapes;
 
-import com.draw.geometricshape.domain.interfaces.UserInputs;
+import com.draw.geometricshape.domain.interfaces.UserInput;
 
 /**
  * This interface contains method signature to draw
@@ -9,6 +9,6 @@ import com.draw.geometricshape.domain.interfaces.UserInputs;
  *
  */
 public interface IGeometricShape {
-	public String draw(UserInputs userInputs);
+	public String draw(UserInput userInputs);
 
 }

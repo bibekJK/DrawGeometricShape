@@ -2,7 +2,7 @@ package com.draw.geometricshape.services;
 
 import org.springframework.stereotype.Component;
 
-import com.draw.geometricshape.domain.interfaces.UserInputs;
+import com.draw.geometricshape.domain.interfaces.UserInput;
 import com.draw.geometricshape.domain.shapes.IGeometricShape;
 
 /**
@@ -21,7 +21,7 @@ public class GeometricShapeService {
 
 	}
 
-	public String draw(UserInputs userInputs) {
+	public String draw(UserInput userInputs) {
 		return shape.draw(userInputs);
 	}
 

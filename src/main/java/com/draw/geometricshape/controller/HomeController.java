@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.draw.geometricshape.domain.interfaces.UserInputs;
+import com.draw.geometricshape.domain.interfaces.UserInput;
 import com.draw.geometricshape.domain.shapes.Diamond;
 import com.draw.geometricshape.domain.shapes.Rectangle;
 import com.draw.geometricshape.domain.shapes.Square;
@@ -48,7 +48,7 @@ public class HomeController {
 	 * @return result string for display
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public String drawShape(@Valid @ModelAttribute("userInputs") UserInputs userInputs, BindingResult results,
+	public String drawShape(@Valid @ModelAttribute("userInputs") UserInput userInputs, BindingResult results,
 			Model model) {
 		if (results.hasErrors()) {
 			addShapeList(model);
