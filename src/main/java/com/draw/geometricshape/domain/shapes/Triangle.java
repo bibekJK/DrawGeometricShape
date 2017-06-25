@@ -40,7 +40,7 @@ public class Triangle implements IGeometricShape {
 						result.append(text.charAt(k) + " ");
 					}
 				} else {
-					for (int l = 0; l < row - 1; l++) {
+					for (int l = 0; l <= row - len + 1; l++) {
 						int temp = (row - len) / 2;
 
 						if (temp < 0) {
@@ -95,12 +95,11 @@ public class Triangle implements IGeometricShape {
 		if (validate(height, row, text) == true) {
 			System.out.println(validate(height, row, text));
 			return result.toString();
-			
+
 		} else {
 			return "Not a valid input";
 		}
-		
-		
+
 	}
 
 	private boolean validate(int height, int row, String text) {
@@ -109,7 +108,7 @@ public class Triangle implements IGeometricShape {
 			return false;
 		}
 
-		return len-1 <= row;
+		return len - 1 <= row;
 
 	}
 
